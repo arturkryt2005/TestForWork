@@ -1,33 +1,58 @@
-﻿using System;
+﻿    using System;
 
-class Program
-{
+    class Program
+    {
+        //static void Main(string[] args)
+        //{
+        //    int N = 5; 
+
+        //    int[,] matrix = new int[N, N];
+
+        //    int summa = 0;
+
+        //    for (int i = 0; i < N; i++)
+        //    {
+        //        for (int j = 0; j < N; j++)
+        //        {
+        //            matrix[i, j] = i + j;
+        //            if(i == j)
+        //                summa += matrix[i, j];
+        //        }
+        //    }
+
+        //    Console.WriteLine("Матрица, заполненная числами, равными сумме индексов:");
+        //    for (int i = 0; i < N; i++)
+        //    {
+        //        for (int j = 0; j < N; j++)
+        //            Console.Write(matrix[i, j] + " ");
+        //        Console.WriteLine();
+        //    }
+
+        //    Console.WriteLine($"Сумма диагональных элементов = {summa}");
+        //}
+
     static void Main(string[] args)
     {
-        int N = 5; 
+        int[,] matrix = {
+            { 3, 6, 9 },
+            { 2, 5, 8 },
+            { 4, 12, 18 }
+        };
 
-        int[,] matrix = new int[N, N];
+        int rows = matrix.GetLength(0);
+        int cols = matrix.GetLength(1);
 
-        int summa = 0;
+        int count = 0;
 
-        for (int i = 0; i < N; i++)
+        for (int i = 0; i < rows; i++)
         {
-            for (int j = 0; j < N; j++)
+            for (int j = 0; j < cols; j++)
             {
-                matrix[i, j] = i + j;
-                if(i == j)
-                    summa += matrix[i, j];
+                if (matrix[i, j] % 3 == 0)
+                    count++; 
             }
         }
-
-        Console.WriteLine("Матрица, заполненная числами, равными сумме индексов:");
-        for (int i = 0; i < N; i++)
-        {
-            for (int j = 0; j < N; j++)
-                Console.Write(matrix[i, j] + " ");
-            Console.WriteLine();
-        }
-
-        Console.WriteLine($"Сумма диагональных элементов = {summa}");
+        Console.WriteLine($"Количество элементов матрицы, которые без остатка делятся на 3: {count}");
     }
 }
+    
