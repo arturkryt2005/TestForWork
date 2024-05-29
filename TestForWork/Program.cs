@@ -64,19 +64,33 @@
     //    }
     //    Console.WriteLine($"Количество элементов матрицы, которые без остатка делятся на 3: {count}");
     //}
+    //static void Main(string[] args)
+    //{
+    //    string str = "This Is A String";
+    //    Console.WriteLine(str);
+
+    //    int count = 0;
+
+    //    foreach (char c in str)
+    //    {
+    //        if(c == ' ')  
+    //        count++;
+    //    }
+    //    Console.WriteLine(count);
+    //}
+
     static void Main(string[] args)
     {
-        string str = "This Is A String";
-        Console.WriteLine(str);
+        int[] a = { 1, 2, 3, 4, 5, 6, 7, 8 };
+        int chet = 0;
 
-        int count = 0;
-
-        foreach (char c in str)
+        for (int i = 0; i < a.Length; i++)
         {
-            if(c == ' ')  
-            count++;
+            if (a[i] % 2 == 0)
+            {
+                chet++;
+            }
         }
-        Console.WriteLine(count);
+        Console.WriteLine(chet);
     }
-
 }
